@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function Signup() {
+  const [passNotEqual, setPassNotEqual] = useState(false);
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -10,6 +14,12 @@ export default function Signup() {
     //this to get values from the checkboxes group
     const acquisitionChannel = fd.getAll("acquisition");
     data.acquisition = acquisitionChannel;
+
+    if (data.password !== data["confirm-password"]) {
+      setPassNotEqual(true);
+      return;
+    }
+
     console.log(data);
   }
 
@@ -42,8 +52,10 @@ export default function Signup() {
             type="password"
             name="confirm-password"
             required
-            minLength={6}
           />
+          <div className="control-error">
+            {passNotEqual && <p>passwords dont match</p>}
+          </div>
         </div>
       </div>
 
