@@ -18,11 +18,13 @@ export default App;
 
 
 /*
-NOTES:
+---NOTES:
 1. There's more ways for data validation:
 - on keystroke: u need State-StateLogin.jsx
 - on submit
 - on lost focus: State+onBlur-StateLogin or ref+state-Login.jsx
-
 - can use browser validation like the 'required' prop-Signup.jsx
+
+2. react form libraries: Formik or React Hook Form
+
 */
