@@ -6,3 +6,5 @@ My mini-projects for the React - The Complete Guide course on udemy
 - [ ] Section 14: Class-based Components
 - [ ] Section 16: Custom Hooks
 - [ ] Section 17-267: Custom Hook in Form
+- [ ] Sections 33 - 37
+- [ ] Section 40

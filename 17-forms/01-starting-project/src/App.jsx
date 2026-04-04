@@ -26,5 +26,4 @@ export default App;
 - can use browser validation like the 'required' prop-Signup.jsx
 
 2. react form libraries: Formik or React Hook Form
-
 */
