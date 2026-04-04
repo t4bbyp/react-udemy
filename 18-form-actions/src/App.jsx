@@ -13,3 +13,13 @@ function App() {
 }
 
 export default App;
+
+
+/*
+----NOTES:
+- Form Actions and useActionState only for react 19+
+- when using FormActions, anytime u submit form even 
+with errors, it resets the form
+- if u want to empty form on Reset btn, add custom logic cuz 
+we used defaultValues with prevState
+*/
