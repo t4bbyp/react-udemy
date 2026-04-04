@@ -6,9 +6,12 @@ import {
 } from "../util/validation";
 import { useActionState } from "react";
 
-export default function Signup() {
+//can move Action functions outside ofcomponent functions
+// can even have them in a diff file
+// except when we use props
+
   //formdata instead of event
-  function signupAction(prevFormState, formData) {
+ function signupAction(prevFormState, formData) {
     const email = formData.get("email");
     const password = formData.get("password");
     const confirmPassword = formData.get("confirm-password");
@@ -66,6 +69,9 @@ export default function Signup() {
 
     return { errors: null };
   }
+
+export default function Signup() {
+ 
 
   const [formState, formAction] = useActionState(signupAction, {
     errors: null,
