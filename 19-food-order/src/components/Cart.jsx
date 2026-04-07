@@ -1,7 +1,7 @@
 import { CartContext } from "../store/cart-context";
 import { useContext } from "react";
 
-export default function Cart() {
+export default function Cart({actions}) {
   const { items, updateItemQuantity } = useContext(CartContext);
 
   const totalPrice = items.reduce(
@@ -43,6 +43,10 @@ export default function Cart() {
       <p className="cart-total">
         <strong>{formattedTotalPrice}</strong>
       </p>
+
+      <form method="dialog" className="modal-actions">
+        {actions}
+      </form>
     </div>
   );
 }

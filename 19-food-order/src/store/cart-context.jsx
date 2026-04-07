@@ -1,9 +1,11 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 
 export const CartContext = createContext({
   items: [],
   addItemToCart: () => {},
   updateItemQuantity: () => {},
+  addOrder: () => {},
+  clearCart: () => {}
 });
 
 function cartReducer(state, action) {
@@ -60,11 +62,16 @@ function cartReducer(state, action) {
     };
   }
 
+  if (action.type === "CLEAR_CART") {
+    return {...state, items: []};
+  }
+
   return state;
 }
 
 export default function CartContextProvider({ children }) {
   const [cartState, cartDispatch] = useReducer(cartReducer, { items: [] });
+  const [orders, setOrders] = useState();
 
   function handleAddItemToCart(meal) {
     cartDispatch({
@@ -83,10 +90,47 @@ export default function CartContextProvider({ children }) {
     });
   }
 
+  function handleClearCart() {
+    cartDispatch({type: "CLEAR_CART"});
+  }
+
+  async function addOrder(orderData) {
+    const response = await fetch("http://localhost:3000/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        order: {
+          items: cartState.items,
+          "total-price": orderData.totalPrice,
+          customer: {
+            name: orderData.name,
+            email: orderData.email,
+            street: orderData.street,
+            "postal-code": orderData.code,
+            city: orderData.city
+          }
+        }
+      }),
+    });
+
+
+    const savedOrder = await response.json();
+
+    if(!response.ok) {
+      throw new Error(savedOrder.message || "failed to send order");
+    }
+
+    return savedOrder;
+  }
+
   const ctxValue = {
     items: cartState.items,
     addItemToCart: handleAddItemToCart,
     updateItemQuantity: handleUpdateCartItemQuantity,
+    addOrder,
+    clearCart: handleClearCart
   };
 
   return <CartContext value={ctxValue}>{children}</CartContext>;
