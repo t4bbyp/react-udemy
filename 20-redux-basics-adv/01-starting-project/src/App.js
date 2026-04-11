@@ -8,3 +8,14 @@ function App() {
 }
 
 export default App;
+
+
+/*
+NOTES:
+- redux & react-redux
+*/
+
+// redux steps: 
+// - create store - /store/index, 
+// - create reducer - /store/index
+// - provider -> src/index.js
