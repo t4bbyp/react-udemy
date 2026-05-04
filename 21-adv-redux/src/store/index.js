@@ -6,7 +6,8 @@ const store = configureStore({
     reducer: {
         ui: uiSlice.reducer,
         cart: cartSlice.reducer
-    }
+    },
+    
 })
 
 
