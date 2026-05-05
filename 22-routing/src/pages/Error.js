@@ -1,0 +1,13 @@
+import MainNav from "../components/MainNav";
+
+function ErrorPage() {
+    return <>
+    <MainNav/>
+        <main>
+            <h1>An error occurred!</h1>
+            <p>could not find this page!</p>
+        </main>
+    </>
+}
+
+export default ErrorPage;
