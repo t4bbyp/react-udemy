@@ -1,12 +1,1 @@
-{
-  "events": [
-    {
-      "title": "A new event",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/M%C3%BCnchen_Panorama.JPG/1024px-M%C3%BCnchen_Panorama.JPG",
-      "date": "2022-10-01",
-      "description": "Some awesome event!",
-      "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
-    }
-  ],
-  "users": []
-}
+{"events":[{"title":"A new event","image":"https://images.plnts.com/optimize/w:3840/plain/https://plnts-api.ams3.digitaloceanspaces.com/main/Blog_banner_top_10_most_beautiful_flower_bulbs_7e59239269.jpg","date":"2022-10-01","description":"Some awesome event!","id":"2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"}],"users":[{"email":"tori@tori.com","password":"$2a$12$cLxp7jgi0HTQY/JuUWE.IeJ6c/SZmwzpD6Q8J2DejaurqeIuRcpwy","id":"21a16442-d0f4-426d-b0b4-5775e84a7c3e"},{"email":"lolol@tori.com","password":"$2a$12$1nqsILFA8dw8c3gAE7YqA.7AD/XW4JAsBXc1ZV0dt8sy2MVrlVH5.","id":"a1114393-4889-492c-b4f1-584f1ada52d9"}]}
